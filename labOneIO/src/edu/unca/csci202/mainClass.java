@@ -23,8 +23,7 @@ public class mainClass {
 			} // end of try-catch
 		}
 		scanner.close();
-		double average = average(input);
-		System.out.println("The average is " + average);
+		System.out.println("The average is " + average(input));
 	} // end of main
 	
 	public static double average(int[] input) {
