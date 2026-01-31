@@ -1,12 +1,13 @@
 package edu.unca.csci202;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SortLab {
 	public static void main(String[] args) {
 		int mode; // validation or speed test
 		int alg; // Bubble, selection or insertion
-		int n; // problem size in speed test
+		int n = 0; // problem size in speed test
 		Scanner scanner = new Scanner(System.in);
 		// user input
 		while (true) { // get mode
@@ -38,12 +39,30 @@ public class SortLab {
 		}
 		// sorting tests
 		SuperSort sorter;
+		
 		if (alg == 1)
 			sorter = new BubbleSort();
 		else if (alg == 2)
 			sorter = new InsertionSort();
 		else {
 			sorter = new SelectionSort();
+		}
+		
+		if (mode == 1) {
+			// validation test
+			int[] testData = makeTestNumbers();
+			sorter.sort(testData, true);
+			System.out.println(Arrays.toString(testData));
+			sorter.printStats();
+		} else if (mode == 2) {
+			// speed test
+			int[] testData = generateRandomNumbers(n);
+			long startTime = System.currentTimeMillis();
+			sorter.sort(testData, false);
+			long endTime = System.currentTimeMillis();
+			long timeElapsed = endTime - startTime;
+			System.out.println("Time elapsed: " + timeElapsed + " milliseconds.");
+			sorter.printStats();
 		}
 	}
 
@@ -58,5 +77,19 @@ public class SortLab {
 				System.out.println("Try again; must be an integer.");
 			}
 		}
+	}
+
+	private static int[] makeTestNumbers() {
+		int[] a = { 1, 7, 4, 2, 3, 5, 6, 9, 10000, 3 };
+		return a;
+	}
+	
+	private static int[] generateRandomNumbers(int n) {
+		java.util.Random rand = new java.util.Random();
+		int[] x = new int[n];
+		for (int i = 0; i < x.length; i++) {
+			x[i] = rand.nextInt(1000);
+		}
+		return x;
 	}
 }
