@@ -39,7 +39,7 @@ public class SortLab {
 		}
 		// sorting tests
 		SuperSort sorter;
-		
+
 		if (alg == 1)
 			sorter = new BubbleSort();
 		else if (alg == 2)
@@ -47,7 +47,7 @@ public class SortLab {
 		else {
 			sorter = new SelectionSort();
 		}
-		
+
 		if (mode == 1) {
 			// validation test
 			int[] testData = makeTestNumbers();
@@ -80,10 +80,10 @@ public class SortLab {
 	}
 
 	private static int[] makeTestNumbers() {
-		int[] a = { 1, 7, 4, 2, 3, 5, 6, 9, 10000, 3 };
+		int[] a = { 90, 8, 7, 56, 123, 235, 9, 1, 653};
 		return a;
 	}
-	
+
 	private static int[] generateRandomNumbers(int n) {
 		java.util.Random rand = new java.util.Random();
 		int[] x = new int[n];
