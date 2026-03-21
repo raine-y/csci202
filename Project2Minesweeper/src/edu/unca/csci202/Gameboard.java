@@ -23,6 +23,8 @@ public class Gameboard {
 
 		while (true) {
 			while (true) {
+				getUserCheat(scanner, "Would you like to cheat? (y/n): ", board);
+				
 				r = getUserInt(scanner, "Please enter row (1-8): ");
 				if (r >= 1 && r <= 8)
 					break;
@@ -67,7 +69,6 @@ public class Gameboard {
 			
 			printBoard(board, false);
 			
-			getUserCheat(scanner, "Is you like to cheat? (y/n): ", board);
 		}
 		System.out.println("Game over.");
 	}
@@ -81,7 +82,7 @@ public class Gameboard {
 			board[i][0] = border; // first column
 			board[i][9] = border; // last column
 		}
-		for (int r = 1; r < ROWS - 1; r++) { // sets gameboard cells as unchecked
+		for (int r = 1; r < ROWS - 1; r++) { // sets game board cells as unchecked
 			for (int c = 1; c < COLS - 1; c++) {
 				Cell cell = new Cell(false, false);
 				board[r][c] = cell;
@@ -106,7 +107,7 @@ public class Gameboard {
 					if (board[r][c].getMine() == true)
 						System.out.print(YELLOW + "M " + RESET);
 					else
-						System.out.print(countAdjacentMines(r, c, board) + " ");	
+						System.out.print("- ");	
 				}
 				System.out.println("");
 			}

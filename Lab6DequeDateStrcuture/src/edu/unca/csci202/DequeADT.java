@@ -47,7 +47,7 @@ public interface DequeADT<T> {
 	 * @throws EmptyCollectionException if the deque is empty
 	 */
 	public T getLast();
-	
+
 	/**
 	 * Returns true if this deque contains no elements.
 	 * 

@@ -7,31 +7,31 @@ public class LinkedDeque<T> implements StackADT<T>, QueueADT<T>, DequeADT<T> {
 		private DNode<T> next;
 		private DNode<T> prev;
 		private T element;
-		// default imp constructor nulls handles 
+		// default imp constructor nulls handles
 	}
-	
-	//data fields
+
+	// data fields
 	private DNode<T> head;
 	private DNode<T> tail;
 	private int count;
-	
+
 	public LinkedDeque() {
 		head = tail = null;
 		count = 0;
 	}
-	
+
 	// DequeADT
 	@Override
 	public void addFirst(T element) {
 		DNode<T> newNode = new DNode<>();
 		// new node unlinked & element-less
-		newNode.element = element; 
-		
-		//special case: empty list getting it's first node
-		if(isEmpty()) {
+		newNode.element = element;
+
+		// special case: empty list getting it's first node
+		if (isEmpty()) {
 			head = tail = newNode;
 		} else {
-			//plugging new node into old head node
+			// plugging new node into old head node
 			newNode.next = head;
 			// old head points to new node
 			head.prev = newNode;
@@ -43,9 +43,10 @@ public class LinkedDeque<T> implements StackADT<T>, QueueADT<T>, DequeADT<T> {
 
 	@Override
 	public T removeFirst() {
-		if (isEmpty()) throw new EmptyCollectionException("LinkedDeque is empty");
+		if (isEmpty())
+			throw new EmptyCollectionException("LinkedDeque is empty");
 		T firstElement = head.element;
-		
+
 		if (size() == 1) { // only one node
 			head = tail = null;
 		} else {
@@ -59,31 +60,33 @@ public class LinkedDeque<T> implements StackADT<T>, QueueADT<T>, DequeADT<T> {
 
 	@Override
 	public T getFirst() {
-		if (isEmpty()) throw new EmptyCollectionException("LinkedDeque is empty");
+		if (isEmpty())
+			throw new EmptyCollectionException("LinkedDeque is empty");
 		return head.element;
 	}
 
 	@Override
 	public void addLast(T element) {
 		DNode<T> newNode = new DNode<>();
-		newNode.element = element; 
-			if(isEmpty()) {
-				head = tail = newNode;
-			} else {
-				// list was not empty, so
-				// attach the new node after the old tail
-				tail.next = newNode;
-				newNode.prev = tail;
-				tail = newNode;
-			}
-			count++;
+		newNode.element = element;
+		if (isEmpty()) {
+			head = tail = newNode;
+		} else {
+			// list was not empty, so
+			// attach the new node after the old tail
+			tail.next = newNode;
+			newNode.prev = tail;
+			tail = newNode;
+		}
+		count++;
 	}
 
 	@Override
 	public T removeLast() {
-		if (isEmpty()) throw new EmptyCollectionException("LinkedDeque is empty");
+		if (isEmpty())
+			throw new EmptyCollectionException("LinkedDeque is empty");
 		T lastElement = tail.element;
-		
+
 		if (size() == 1) { // only one node
 			head = tail = null;
 		} else {
@@ -92,11 +95,13 @@ public class LinkedDeque<T> implements StackADT<T>, QueueADT<T>, DequeADT<T> {
 			// Java GC once again kills that last node for us
 		}
 		count--;
-		return lastElement;	}
+		return lastElement;
+	}
 
 	@Override
 	public T getLast() {
-		if (isEmpty()) throw new EmptyCollectionException("LinkedDeque is empty");
+		if (isEmpty())
+			throw new EmptyCollectionException("LinkedDeque is empty");
 		return tail.element;
 	}
 
@@ -105,7 +110,7 @@ public class LinkedDeque<T> implements StackADT<T>, QueueADT<T>, DequeADT<T> {
 	public void enqueue(T element) {// wrapper method
 		addLast(element);
 	}
-	
+
 	@Override
 	public T dequeue() {
 		return removeFirst();
@@ -129,7 +134,8 @@ public class LinkedDeque<T> implements StackADT<T>, QueueADT<T>, DequeADT<T> {
 
 	@Override
 	public T peek() {
-		if (isEmpty()) throw new EmptyCollectionException("ArrayStack");
+		if (isEmpty())
+			throw new EmptyCollectionException("ArrayStack");
 		return head.element;
 	}
 
@@ -142,7 +148,7 @@ public class LinkedDeque<T> implements StackADT<T>, QueueADT<T>, DequeADT<T> {
 	public int size() {
 		return count;
 	}
-	
+
 	@Override
 	public String toString() {
 		String str = (String) head.element;
