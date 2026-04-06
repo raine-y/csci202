@@ -7,21 +7,22 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 
 public class Main {
-	
+
 	private static final double ERROR_RATE = 0.25;
 
 	public static void main(String[] args) {
 
 		int numFiles, numData;
 
-		while (true) { // takes user inputs for number of files and number of data points for each file.
+		while (true) { // takes user inputs for number of files and number of data points for each
+						// file.
 			Scanner scanner = new Scanner(System.in);
 			try {
 				System.out.print("Please enter the number of files to create: ");
 				numFiles = scanner.nextInt();
 				System.out.print("Please enter the number of data points in each file: ");
 				numData = scanner.nextInt();
-				scanner.close();
+				scanner.close(); // avoid leakage
 				break;
 			} catch (InputMismatchException e) {
 				System.out.println("That is not a number. Please try again.");
@@ -32,7 +33,7 @@ public class Main {
 
 		DataFileFactory userFileRequest = new DataFileFactory(numFiles, numData);
 
-		while (true) { // writes files and gives error rate
+		while (true) { 
 			try {
 				userFileRequest.writeFiles(ERROR_RATE);
 				break;
@@ -48,26 +49,23 @@ public class Main {
 		try {
 			for (int f = 0; f < numFiles; f++) {
 				File file = new File(userFileRequest.getFileName(f));
-				Scanner scanner = new Scanner(file);
-				for (int d = 0; d < numData; d++) {
-					try {
-						fileByData[f][d] = scanner.nextInt();
-						System.out.print(fileByData[f][d]);
-					} catch (InputMismatchException e) {
-						try {
-							fileByData[f][d] = Integer.parseInt(scanner.nextLine());
+				try (Scanner fileScanner = new Scanner(file)) {
+					int d = 0;
+					while (d < numData && fileScanner.hasNext() == true) {
+						if (fileScanner.hasNextInt() == true) {
+							fileByData[f][d] = fileScanner.nextInt();
 							System.out.print(fileByData[f][d]);
-						} catch (NumberFormatException e2) {
-							--d;									// skips bad input
-							continue;
+							if (d < numData - 1)
+								System.out.print(", ");
+							d++; // Increment to next index if good string
+						} else {
+							fileScanner.next(); // SKIPPING bad string
 						}
 					}
-					if (d < numData - 1) {
-						System.out.print(", ");
-					}
+					System.out.println(); 
+				} catch (FileNotFoundException e) {
+					System.out.println("File not found: " + e.getMessage());
 				}
-				System.out.println("");
-				scanner.close();
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found." + e);
@@ -75,16 +73,14 @@ public class Main {
 			System.out.println("IO failed or interrupted." + e);
 		}
 
-		
-		for (int d = 0; d < numData; d++) {     	  // 'if i have 3 files of 8 values each, 
-			int colSum = 0;						  // i should be getting 8 column sums, not 3'
+		for (int d = 0; d < numData; d++) {
+			int colSum = 0;
 			for (int f = 0; f < numFiles; f++) {
 				colSum += fileByData[f][d];
 			}
 			System.out.println("Column " + d + " has sum=" + colSum);
 		} // for loop ends
 
-		
 		userFileRequest.removeFiles();
 	}
 }

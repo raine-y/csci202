@@ -41,7 +41,6 @@ public class DataFileFactory {
 			System.out.print("writing file "+fileName+" ");
 			FileOutputStream fos = new FileOutputStream(fileName);
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
-			
 			// count how many error were generated
 			int errorCount = 0;
 			

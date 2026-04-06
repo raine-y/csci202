@@ -1,0 +1,39 @@
+Running performanceTest() tests.
+===== Warehouse size 1000 tests. =====
+IterativeSearch 1000 items 10000 operations: 0.019 seconds.
+BinarySearch    1000 items 10000 operations: 0.005 seconds.
+--------------------------------------
+IterativeSearch 1000 items 100000 operations: 0.084 seconds.
+BinarySearch    1000 items 100000 operations: 0.019 seconds.
+--------------------------------------
+
+===== Warehouse size 10000 tests. =====
+IterativeSearch 10000 items 10000 operations: 0.107 seconds.
+BinarySearch    10000 items 10000 operations: 0.003 seconds.
+--------------------------------------
+IterativeSearch 10000 items 100000 operations: 0.659 seconds.
+BinarySearch    10000 items 100000 operations: 0.021 seconds.
+--------------------------------------
+
+===== Warehouse size 25000 tests. =====
+IterativeSearch 25000 items 10000 operations: 0.275 seconds.
+BinarySearch    25000 items 10000 operations: 0.003 seconds.
+--------------------------------------
+IterativeSearch 25000 items 100000 operations: 2.668 seconds.
+BinarySearch    25000 items 100000 operations: 0.027 seconds.
+--------------------------------------
+
+Running priceRangeSearch() tests.
+IterativeSearch priceRangeSearch(25,75):
+	Widget[Desc: item3 SKU: 3 Price: $30.00 Quantity: 0],
+	Widget[Desc: item4 SKU: 4 Price: $40.00 Quantity: 0],
+	Widget[Desc: item5 SKU: 5 Price: $50.00 Quantity: 0],
+	Widget[Desc: item6 SKU: 6 Price: $60.00 Quantity: 0],
+	Widget[Desc: item7 SKU: 7 Price: $70.00 Quantity: 0],
+
+BinarySearch    priceRangeSearch(25,75):
+	Widget[Desc: item3 SKU: 3 Price: $30.00 Quantity: 0],
+	Widget[Desc: item4 SKU: 4 Price: $40.00 Quantity: 0],
+	Widget[Desc: item5 SKU: 5 Price: $50.00 Quantity: 0],
+	Widget[Desc: item6 SKU: 6 Price: $60.00 Quantity: 0],
+	Widget[Desc: item7 SKU: 7 Price: $70.00 Quantity: 0],
