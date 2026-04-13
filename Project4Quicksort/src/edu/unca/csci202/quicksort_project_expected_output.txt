@@ -1,0 +1,68 @@
+Testing: QuickSort             
+[9,0,8,1,7,2,6,3,5,4]
+[0,1,2,3,4,5,6,7,8,9]
+Testing: RecursiveSelectionSort
+[9,0,8,1,7,2,6,3,5,4]
+[0,1,2,3,4,5,6,7,8,9]
+Testing: SelectionSort         
+[9,0,8,1,7,2,6,3,5,4]
+[0,1,2,3,4,5,6,7,8,9]
+Testing: BubbleSort            
+[9,0,8,1,7,2,6,3,5,4]
+[0,1,2,3,4,5,6,7,8,9]
+Testing: InsertionSort         
+[9,0,8,1,7,2,6,3,5,4]
+[0,1,2,3,4,5,6,7,8,9]
+=============================
+Timing: sort list of 10 integers (10^1.0)
+QuickSort             : 0ms  #Swaps: 16  #QuickSortCalls: 7
+RecursiveSelectionSort: 0ms  #numberOfSwaps: 8  #numberOfRecursionCalls: 20
+SelectionSort         : 0ms  #numberOfSwaps: 7  #numberOfComparisons: 45
+BubbleSort            : 0ms  #numberOfSwaps: 23  #numberOfComparisons: 45
+InsertionSort         : 0ms  #numberOfSwaps: 35  #numberOfComparisons: 35
+=============================
+Timing: sort list of 100 integers (10^2.0)
+QuickSort             : 0ms  #Swaps: 227  #QuickSortCalls: 68
+RecursiveSelectionSort: 0ms  #numberOfSwaps: 94  #numberOfRecursionCalls: 120
+SelectionSort         : 0ms  #numberOfSwaps: 94  #numberOfComparisons: 4950
+BubbleSort            : 0ms  #numberOfSwaps: 2705  #numberOfComparisons: 4950
+InsertionSort         : 0ms  #numberOfSwaps: 2151  #numberOfComparisons: 2151
+=============================
+Timing: sort list of 1000 integers (10^3.0)
+QuickSort             : 1ms  #Swaps: 3029  #QuickSortCalls: 659
+RecursiveSelectionSort: 17ms  #numberOfSwaps: 994  #numberOfRecursionCalls: 1120
+SelectionSort         : 17ms  #numberOfSwaps: 997  #numberOfComparisons: 499500
+BubbleSort            : 21ms  #numberOfSwaps: 263391  #numberOfComparisons: 499500
+InsertionSort         : 10ms  #numberOfSwaps: 253537  #numberOfComparisons: 253537
+=============================
+Timing: sort list of 10000 integers (10^4.0)
+QuickSort             : 8ms  #Swaps: 38250  #QuickSortCalls: 6677
+RecursiveSelectionSort: 273ms  #numberOfSwaps: 9992  #numberOfRecursionCalls: 11120
+SelectionSort         : 236ms  #numberOfSwaps: 9983  #numberOfComparisons: 49995000
+BubbleSort            : 372ms  #numberOfSwaps: 24819923  #numberOfComparisons: 49995000
+InsertionSort         : 155ms  #numberOfSwaps: 25231069  #numberOfComparisons: 25231069
+=============================
+Timing: sort list of 100000 integers (10^5.0)
+QuickSort             : 27ms  #Swaps: 455128  #QuickSortCalls: 66653
+java.lang.StackOverflowError
+	StackOverflow, disabling RecursiveSelectionSort
+RecursiveSelectionSort: 7144ms  #numberOfSwaps: 16915  #numberOfRecursionCalls: 28035
+SelectionSort         : 20509ms  #numberOfSwaps: 99987  #numberOfComparisons: 4999950000
+	Took longer than 10 seconds, disabling SelectionSort         
+BubbleSort            : 41514ms  #numberOfSwaps: 2502960639  #numberOfComparisons: 4999950000
+	Took longer than 10 seconds, disabling BubbleSort            
+InsertionSort         : 16644ms  #numberOfSwaps: 2498596429  #numberOfComparisons: 2498596429
+	Took longer than 10 seconds, disabling InsertionSort         
+=============================
+Timing: sort list of 1000000 integers (10^6.0)
+QuickSort             : 489ms  #Swaps: 5288595  #QuickSortCalls: 666608
+=============================
+Timing: sort list of 3162277 integers (10^6.5)
+QuickSort             : 1952ms  #Swaps: 18235402  #QuickSortCalls: 2107726
+=============================
+Timing: sort list of 10000000 integers (10^7.0)
+QuickSort             : 7176ms  #Swaps: 61467247  #QuickSortCalls: 6666706
+=============================
+Timing: sort list of 31622776 integers (10^7.5)
+QuickSort             : 28687ms  #Swaps: 205769668  #QuickSortCalls: 21081499
+	Took longer than 10 seconds, disabling QuickSort    

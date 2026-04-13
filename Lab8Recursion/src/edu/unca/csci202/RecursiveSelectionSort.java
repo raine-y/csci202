@@ -68,6 +68,7 @@ public class RecursiveSelectionSort<T extends Comparable<T>> {
 		Node<T> curr = startNode;
 		Node<T> min = startNode;
 		while (curr != null) {
+			this.count++;
 			if (curr.element.compareTo(min.element) < 0) {
 				min = curr;
 			}

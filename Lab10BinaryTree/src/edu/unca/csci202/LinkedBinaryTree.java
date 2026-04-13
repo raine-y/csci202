@@ -153,11 +153,10 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTreeADT<
 	    ArrayList<T> list = new ArrayList<>();
 	    if (root == null)
 	    	return list.iterator();
-	    
 	    Queue<Node> queue = new ArrayDeque<>();
 	    queue.add(root);
 	    
-	    while (!queue.isEmpty()) { // it is like minsweeper :o
+	    while (!queue.isEmpty()) { // it is like Minsweeper :o
 	        Node curr = queue.poll();
 	        list.add(curr.element);
 	        if (curr.left  != null) queue.add(curr.left);

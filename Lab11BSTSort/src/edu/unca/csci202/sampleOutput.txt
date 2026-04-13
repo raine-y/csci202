@@ -1,0 +1,87 @@
+			37
+		37
+	24
+				22
+			18
+		18
+13
+			12
+		10
+			9
+	7
+		4
+			2
+
+height:5 min:2 max:37
+InOrder Traversal:
+2, 4, 7, 9, 10, 12, 13, 18, 18, 22, 24, 37, 37, 
+
+
+Testing:      BST Sort       
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ]
+  size=10  heightOfTree=10
+Testing:      Random BST Sort
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ]
+  size=10  heightOfTree=5
+=============================
+Timing: sort list of 10 integers (10^1.0)
+Random numbers
+     BST Sort       : 0ms    size=10  heightOfTree=5
+     Random BST Sort: 0ms    size=10  heightOfTree=5
+Sequential numbers
+     BST Sort       : 0ms    size=10  heightOfTree=10
+     Random BST Sort: 0ms    size=10  heightOfTree=5
+Reversed Sequential numbers
+     BST Sort       : 0ms    size=10  heightOfTree=10
+     Random BST Sort: 0ms    size=10  heightOfTree=5
+=============================
+Timing: sort list of 100 integers (10^2.0)
+Random numbers
+     BST Sort       : 0ms    size=100  heightOfTree=14
+     Random BST Sort: 0ms    size=100  heightOfTree=16
+Sequential numbers
+     BST Sort       : 0ms    size=100  heightOfTree=100
+     Random BST Sort: 0ms    size=100  heightOfTree=12
+Reversed Sequential numbers
+     BST Sort       : 0ms    size=100  heightOfTree=100
+     Random BST Sort: 0ms    size=100  heightOfTree=14
+=============================
+Timing: sort list of 1000 integers (10^3.0)
+Random numbers
+     BST Sort       : 1ms    size=1000  heightOfTree=19
+     Random BST Sort: 0ms    size=1000  heightOfTree=21
+Sequential numbers
+     BST Sort       : 5ms    size=1000  heightOfTree=1000
+     Random BST Sort: 1ms    size=1000  heightOfTree=19
+Reversed Sequential numbers
+     BST Sort       : 1ms    size=1000  heightOfTree=1000
+     Random BST Sort: 0ms    size=1000  heightOfTree=24
+=============================
+Timing: sort list of 10000 integers (10^4.0)
+Random numbers
+     BST Sort       : 2ms    size=10000  heightOfTree=28
+     Random BST Sort: 3ms    size=10000  heightOfTree=29
+Sequential numbers
+     BST Sort       : 93ms    size=10000  heightOfTree=10000
+     Random BST Sort: 4ms    size=10000  heightOfTree=33
+Reversed Sequential numbers
+     BST Sort       : 81ms    size=10000  heightOfTree=10000
+     Random BST Sort: 2ms    size=10000  heightOfTree=33
+=============================
+Timing: sort list of 100000 integers (10^5.0)
+Random numbers
+     BST Sort       : 30ms    size=100000  heightOfTree=40
+     Random BST Sort: 39ms    size=100000  heightOfTree=39
+Sequential numbers
+     BST Sort       : 8391ms    size=100000java.lang.StackOverflowError
+	StackOverflow, disabling      BST Sort       
+Reversed Sequential numbers
+     Random BST Sort: 26ms    size=100000  heightOfTree=41
+=============================
+Timing: sort list of 1000000 integers (10^6.0)
+Random numbers
+     Random BST Sort: 904ms    size=1000000  heightOfTree=52
+Sequential numbers
+     Random BST Sort: 865ms    size=1000000  heightOfTree=47
+Reversed Sequential numbers
+     Random BST Sort: 1013ms    size=1000000  heightOfTree=47
